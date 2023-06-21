@@ -2,8 +2,8 @@
 
 /**
  * main-Entrypoint
- * description: prints _putchar
- * Return- always 0
+ * Description: prints _putchar
+ * Return: 0
  */
 
 int main(void)
