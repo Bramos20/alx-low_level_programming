@@ -21,8 +21,8 @@ void puts_half(char *str)
 	/* Print the last n characters of the string */
 	for (i = l - n; i < l; i++)
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 	}
 
-	putchar('\n');
+	_putchar('\n');
 }
