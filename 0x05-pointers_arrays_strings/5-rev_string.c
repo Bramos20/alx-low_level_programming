@@ -17,9 +17,10 @@ void rev_string(char *s)
 		e++;
 	}
 	e--;
-	
+
 	{
 		char *n;
+
 		for (n = s; n < e; n++, e--)
 		{
 			char t = *n;
