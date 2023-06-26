@@ -1,18 +1,19 @@
-#include "main.h"
+#include <stdio.h>
 
 void puts_half(char *str)
 {
-	int length = 0;
+	int l = 0;
+	int n, i;
 
 	/* Calculate the length of the string */
-	while (str[length] != '\0')
-		length++;
+	while (str[l] != '\0')
+		l++;
 
 	/* Calculate the number of characters to print */
-	int n = (length - 1) / 2;
+	n = (l - 1) / 2;
 
 	/* Print the last n characters of the string */
-	for (int i = length - n; i < length; i++)
+	for (i = l - n; i < l; i++)
 	{
 		putchar(str[i]);
 	}
