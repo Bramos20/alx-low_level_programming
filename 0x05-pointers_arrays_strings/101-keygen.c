@@ -17,3 +17,22 @@ void generate_password(char *password, int length)
 
     password[length] = '\0';
 }
+
+int main(void)
+{
+    char password[PASSWORD_LENGTH + 1];
+    int attempts = 0;
+
+    srand(time(NULL));
+
+    do
+    {
+        generate_password(password, PASSWORD_LENGTH);
+        printf("Attempt #%d: %s\n", attempts + 1, password);
+        attempts++;
+    } while (strcmp(password, "A-<8t4") != 0);
+
+    printf("Password cracked after %d attempts!\n", attempts);
+
+    return 0;
+}
