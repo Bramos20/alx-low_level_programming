@@ -2,13 +2,14 @@
 
 void rev_string(char *s)
 {
-	if (s == NULL)
-        return;
+	int l;
+	char *e;
 
-	int l = 0;
-	char *e = s;
-	char *n;
-	char t;
+	if (s == NULL)
+		return;
+
+	l = 0;
+	e = s;
 
 	while (*e != '\0')
 	{
@@ -16,10 +17,11 @@ void rev_string(char *s)
 		e++;
 	}
 	e--;
-
-	for (*n = s; n < e; n++, e--)
+	
+	char *n;
+	for (n = s; n < e; n++, e--)
 	{
-		t = *n;
+		char t = *n;
 		*n = *e;
 		*e = t;
 	}
