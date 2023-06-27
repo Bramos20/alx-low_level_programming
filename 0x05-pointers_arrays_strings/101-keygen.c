@@ -19,7 +19,13 @@ int main(void)
         generate_password(password, PASSWORD_LENGTH);
         printf("Attempt #%d: %s\n", attempts + 1, password);
         attempts++;
-    } while (strcmp(password, "A-<8t4") != 0);
+
+        if (strcmp(password, "A-<8t4") == 0)
+        {
+            printf("Tada! Congrats\n");
+            break;
+        }
+    } while (1);
 
     printf("Password cracked after %d attempts!\n", attempts);
 
