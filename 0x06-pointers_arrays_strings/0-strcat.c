@@ -9,24 +9,24 @@
  */
 char *_strcat(char *dest, const char *src)
 {
-	char *ptr = dest;
+	int i, j;
 
-	/* Find the end of the destination string */
-	while (*ptr != '\0')
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		ptr++;
+		;
+		i++;
 	}
 
-	/* Copy the source string to the end of the destination string */
-	while (*src != '\0')
+	j = 0;
+	while (src[j] != '\0')
 	{
-		*ptr = *src;
-		ptr++;
-		src++;
+		dest[i] = src[c];
+		i++;
+		j++;
 	}
 
-	/* Add a terminating null byte */
-	*ptr = '\0';
+	dest[i] = '\0';
 
 	return dest;
 }
