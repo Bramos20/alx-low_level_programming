@@ -2,25 +2,6 @@
 #include <string.h>
 
 /**
- * reverse_string - Reverses a string in-place
- * @str: The string to be reversed
- */
-void reverse_string(char *str)
-{
-	int start = 0;
-	int end = strlen(str) - 1;
-
-	while (start < end)
-	{
-		char temp = str[start];
-		str[start] = str[end];
-		str[end] = temp;
-		start++;
-		end--;
-	}
-}
-
-/**
  * infinite_add - Adds two numbers
  * @n1: The first number
  * @n2: The second number
@@ -39,7 +20,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int i = 0;
 
 	if (max_len + 1 > size_r)
-		return 0;
+		return (0);
 
 	while (i < max_len)
 	{
@@ -56,7 +37,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (carry)
 	{
 		if (i >= size_r - 1)
-			return 0;
+			return (0);
 
 		r[i] = carry + '0';
 		i++;
@@ -64,7 +45,18 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	r[i] = '\0';
 
-	reverse_string(r);
+	/* Reverse the result string */
+	int start = 0;
+	int end = i - 1;
 
-	return r;
+	while (start < end)
+	{
+		char temp = r[start];
+		r[start] = r[end];
+		r[end] = temp;
+		start++;
+		end--;
+	}
+
+	return (r);
 }
