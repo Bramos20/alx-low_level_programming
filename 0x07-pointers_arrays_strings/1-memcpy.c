@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * _memcpy - Copies n bytes from memory area src to memory area dest
@@ -8,10 +8,10 @@
  *
  * Return: Pointer to the destination memory area (dest)
  */
-char *_memcpy(char *dest, const char *src, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	char *destPtr = dest;
-	const char *srcPtr = src;
+	char *srcPtr = src;
 
 	while (n > 0)
 	{
