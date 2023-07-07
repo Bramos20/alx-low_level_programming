@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -9,8 +10,8 @@
  */
 int main(int argc, char *argv[])
 {
-    /* Print the number of arguments */
-    printf("%d\n", argc - 1);
 
-    return 0;
+	/* Print the number of arguments */
+	printf("%d\n", argc - 1);
+	return 0;
 }
