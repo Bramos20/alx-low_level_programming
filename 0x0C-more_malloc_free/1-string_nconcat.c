@@ -1,51 +1,33 @@
 #include "main.h"
-#include <stdio.h>
+#include <string.h>
 
 /**
- * string_nconcat - concatenate 2 strings, only n bytes of s2
- * @s1: string 1
- * @s2: string 2
- * @n: bytes to include of s2
- * Return: NULL if fail, else pointer to malloc memory
+ * string_nconcat - Concatenates two strings
+ * @s1: Pointer to the first string
+ * @s2: Pointer to the second string
+ * @n: Number of bytes from s2 to concatenate
+ *
+ * Return: Pointer to the concatenated string or NULL on failure
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *p;
-	int strlen1, i, c;
-
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	strlen1 = (unsigned int)_strlen(s1);
-	p = malloc((strlen1 + n + 1) * sizeof(char));
-	if (p == NULL)
-		return (NULL);
-	for (i = 0, c = 0; i < (strlen1 + n); i++)
-	{
-		if (i < strlen1)
-			p[i] = s1[i];
-		else
-			p[i] = s2[c++];
-	}
-	p[i] = '\0';
+	unsigned int s1_len = strlen(s1);
+	unsigned int s2_len = strlen(s2);
 
-	return (p);
-}
+	if (n >= s2_len)
+		n = s2_len;
 
-/**
- * _strlen - find length of string
- * @s: string
- * Return: length of string
- */
+	char *concatenated = malloc(s1_len + n + 1);
+	if (concatenated == NULL)
+		return NULL;
 
-int _strlen(char *s)
-{
-	int i;
+	strcpy(concatenated, s1);
+	strncat(concatenated, s2, n);
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (i);
+	return concatenated;
 }
